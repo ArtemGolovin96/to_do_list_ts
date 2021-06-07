@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+
+
+.main-body{
+    padding: 200px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.all {
+    border: 1px solid rgb(192, 192, 192);
+    border-radius: 10px;
+    width: 336px;
+}
+
+.ylw {
+    height: 28px;
+    background-color: #FFDC40;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom: 1px solid orange;  
+}
+
+.generalh {
+    font-style: normal;
+    font-size: 26px;
+    font-weight: 900;
+    text-align: center; 
+}
+
+.sortbutton {
+    width: 25px;
+    height: 15px;
+    margin: 0 0 0 290px;
+}
+
+.sortbutton:active, .sortbutton:focus {
+    outline: none;
+    
+}
+
+.list {
+    border: 1px solid rgb(192, 192, 192);
+    border-radius: 10px;
+    margin: 10px;
+}
+
+.tasks {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.task-text {
+    margin:3px 0px 3px 10px;
+    border: none;
+    outline: none !important;
+    width: 270px;
+}
+
+
+
+.task-button {
+    width: 20px;
+    height: 20px;
+    margin: 5px 10px 5px 0;
+}
+
+.task-button:focus, .task-button:active {
+    outline: none;
+    background: url("img/delete_on_svg.svg");
+    background-size: 97%;
+}
+
+
+.task-button:hover {
+        background: url("img/delete_on_svg.svg");
+        background-size: 97%;
+}
+
+.append-button {
+    margin: 0px 90px 0px 90px;
+}
+
+.append-button:active, .append-button:focus {
+
+}
+
+.selected {
+    opacity: 0.9;
+    border: 0.1px solid red;
+}
+
+.checkbox {
+    margin: 10px 0px 0px 10px;
+}
