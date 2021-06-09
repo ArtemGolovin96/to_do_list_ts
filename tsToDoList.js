@@ -1,8 +1,7 @@
 "use strict";
-exports.__esModule = true;
-var sortImg = document.querySelector('.sortbutton');
-var delButton = document.querySelector('.task-buton');
-var firstDeleteButton = document.querySelector('.task-button');
+const sortImg = document.querySelector('.sortbutton');
+const delButton = document.querySelector('.task-buton');
+const firstDeleteButton = document.querySelector('.task-button');
 sortImg.addEventListener('mouseover', function (e) {
     e.preventDefault();
     if (sortImg.src.endsWith('/img/todo_down_svg.svg')) {
@@ -55,24 +54,24 @@ function addEvListenerClickDelete(arg) {
     });
 }
 //Кнопка добавить
-var addButton = document.querySelector('.append-button');
-var div = document.querySelector('.tasks');
-var list = document.querySelector('.list');
-var input = document.querySelector('.task-text');
+const addButton = document.querySelector('.append-button');
+const div = document.querySelector('.tasks');
+const list = document.querySelector('.list');
+const input = document.querySelector('.task-text');
 addEvListenerFocusBlurToDelButton(div);
 function addEvListenerFocusBlurToDelButton(argument) {
     var _a;
-    (_a = argument.lastElementChild) === null || _a === void 0 ? void 0 : _a.addEventListener('focus', function (e) {
+    (_a = argument.lastElementChild) === null || _a === void 0 ? void 0 : _a.addEventListener('focus', (e) => {
         argument.lastElementChild.style.background = 'url("img/delete_on_svg.svg")';
         argument.lastElementChild.style.backgroundSize = '97%';
     });
-    argument.lastElementChild.addEventListener('blur', function (e) {
+    argument.lastElementChild.addEventListener('blur', (e) => {
         argument.lastElementChild.style.background = 'none';
         argument.lastElementChild.src = './img/delete_off_svg.svg';
     });
 }
-addButton.addEventListener('click', function (e) {
-    var cloneInput = div.cloneNode(true);
+addButton.addEventListener('click', (e) => {
+    let cloneInput = div.cloneNode(true);
     cloneInput.firstElementChild.value = '';
     addEvListenerFocusBlurToDelButton(cloneInput);
     addEvListenerClickDelete(cloneInput.lastElementChild);
@@ -80,9 +79,9 @@ addButton.addEventListener('click', function (e) {
 });
 //Управление с клавиатуры для кнопки "Добавить"
 //Обработчик сработает при фокусе на кнопке и нажатии пробела
-addButton.addEventListener('keydown', function (e) {
+addButton.addEventListener('keydown', (e) => {
     if ((e.keyCode == 32 && addButton == document.activeElement) || (e.keyCode == 13 && addButton == document.activeElement)) {
-        var cloneInput = div.cloneNode(true);
+        let cloneInput = div.cloneNode(true);
         cloneInput.firstElementChild.value = '';
         addEvListenerFocusBlurToDelButton(cloneInput);
         addEvListenerClickDelete(cloneInput.lastElementChild);
@@ -90,12 +89,12 @@ addButton.addEventListener('keydown', function (e) {
     }
 });
 function sortList() {
-    var sortingList = document.querySelectorAll('.tasks');
-    var list = document.querySelector('.list');
-    var arr = Array.from(sortingList);
-    arr.sort(function (a, b) {
-        var aa = a.firstElementChild.value;
-        var bb = b.firstElementChild.value;
+    let sortingList = document.querySelectorAll('.tasks');
+    let list = document.querySelector('.list');
+    let arr = Array.from(sortingList);
+    arr.sort((a, b) => {
+        let aa = a.firstElementChild.value;
+        let bb = b.firstElementChild.value;
         if (aa < bb) {
             return -1;
         }
@@ -106,18 +105,18 @@ function sortList() {
             return 0;
         }
     });
-    arr.forEach(function (el) {
+    arr.forEach((el) => {
         list.append(el);
     });
 }
 // Сортировка списка задач по алфавиту в ОБРАТНОМ порядке
 function sortListReverse() {
-    var sortingList = document.querySelectorAll('.tasks');
-    var list = document.querySelector('.list');
-    var arr = Array.from(sortingList);
-    arr.sort(function (a, b) {
-        var aa = a.firstElementChild.value;
-        var bb = b.firstElementChild.value;
+    let sortingList = document.querySelectorAll('.tasks');
+    let list = document.querySelector('.list');
+    let arr = Array.from(sortingList);
+    arr.sort((a, b) => {
+        let aa = a.firstElementChild.value;
+        let bb = b.firstElementChild.value;
         if (aa < bb) {
             return 1;
         }
@@ -128,7 +127,7 @@ function sortListReverse() {
             return 0;
         }
     });
-    arr.forEach(function (el) {
+    arr.forEach((el) => {
         list.append(el);
     });
 }

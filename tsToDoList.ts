@@ -1,4 +1,4 @@
-import { OpenDirOptions } from "fs";
+
 const sortImg = document.querySelector('.sortbutton') as HTMLImageElement;
 const delButton = document.querySelector('.task-buton') as HTMLImageElement;
 const firstDeleteButton = document.querySelector('.task-button') as HTMLImageElement;
@@ -98,8 +98,8 @@ addButton.addEventListener('keydown', (e: KeyboardEvent) => {
 
 function sortList(): void {
     let sortingList = document.querySelectorAll('.tasks');
-    let list = document.querySelector('.list');
-    let arr = Array.from(sortingList);
+    let list = document.querySelector('.list') as HTMLTableElement;
+    let arr: Element[] = Array.from(sortingList);
     arr.sort((a, b) => {
         let aa = (a.firstElementChild as HTMLInputElement).value;
         let bb = (b.firstElementChild as HTMLInputElement).value;
@@ -113,7 +113,7 @@ function sortList(): void {
             return 0;
         }
     })
-    arr.forEach((el) => {
+    arr.forEach((el: Element) => {
         list.append(el)
     })
 
@@ -122,8 +122,8 @@ function sortList(): void {
 // Сортировка списка задач по алфавиту в ОБРАТНОМ порядке
 function sortListReverse(): void {
     let sortingList = document.querySelectorAll('.tasks');
-    let list = document.querySelector('.list');
-    let arr = Array.from(sortingList);
+    let list = document.querySelector('.list') as HTMLDivElement;
+    let arr: Element[] = Array.from(sortingList);
     arr.sort((a, b) => {
         let aa = (a.firstElementChild as HTMLInputElement).value;
         let bb = (b.firstElementChild as HTMLInputElement).value;
@@ -137,7 +137,7 @@ function sortListReverse(): void {
             return 0;
         }
     })
-    arr.forEach((el) => {
+    arr.forEach((el: Element) => {
         list.append(el)
     })
 
